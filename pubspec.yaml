@@ -1,0 +1,15 @@
+name: todone_lib
+description: A library made to parse Todone style tasks.
+version: 0.0.1
+repository: https://github.com/UriMtzF/todone-lib
+
+environment:
+  sdk: ^3.2.5
+
+# Add regular dependencies here.
+dependencies:
+  # path: ^1.8.0
+
+dev_dependencies:
+  lints: ^2.1.0
+  test: ^1.24.0
