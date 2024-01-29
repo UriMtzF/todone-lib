@@ -21,7 +21,7 @@ class Parser {
   List<Task> _parseTasks(List<String> lines) {
     List<Task> tasks = [];
     for (final line in lines) {
-      if (line.startsWith('- ')) {
+      if (line.startsWith('! ')) {
         Task task = Task();
         task.status = _parseStatus(line);
         task.doneDate = _parseDoneDate(line);
@@ -41,7 +41,7 @@ class Parser {
   Status _parseStatus(String task) {
     RegExp exp = RegExp(' done:\\d{4}-\\d{2}-\\d{2}| done:');
     RegExpMatch? match = exp.firstMatch(task);
-    return match != null ? Status.done : Status.undone;
+    return match == null ? Status.undone : Status.done;
   }
 
   DateTime? _parseDoneDate(String task) {
@@ -97,7 +97,7 @@ class Parser {
   }
 
   String _parseTitle(String taskText, Task task) {
-    taskText = taskText.replaceAll("- ", "");
+    taskText = taskText.replaceAll("! ", "");
     if (task.doneDate != null) {
       taskText = taskText.replaceAll(
           "done: ${task.doneDate.toString().substring(0, 10)}", "");
