@@ -153,7 +153,7 @@ class ToDone {
     }
     if (task.creationDate != null) {
       taskText = taskText.replaceAll(
-          "created: ${task.creationDate.toString().substring(0, 10)}", "");
+          "created:${task.creationDate.toString().substring(0, 10)}", "");
     }
     if (task.dueDate != null) {
       taskText = taskText.replaceAll(
