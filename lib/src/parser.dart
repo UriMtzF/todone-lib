@@ -35,7 +35,7 @@ class ToDone {
       if (task.creationDate != null) {
         line += 'created:${task.creationDate.toString().substring(0, 10)} ';
       }
-      fileContent += '$line ';
+      fileContent += '$line\n';
     }
     return fileContent;
   }

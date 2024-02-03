@@ -16,5 +16,5 @@ class Task {
   // Set<String>? attachments;
   // String? description;
 
-  Task([this.title = "", this.status = Status.done]);
+  Task([this.title = "", this.status = Status.undone]);
 }
