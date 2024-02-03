@@ -20,4 +20,4 @@
 - Library: Fixed a bug where it would write tasks in one line.
 
 ## 0.1.2
-- Library: Fixed the parser from reading wrong tasks with a done date.
+- Library: Fixed the parser from reading wrong tasks with a done date, created date and a due date.

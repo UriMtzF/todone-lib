@@ -146,7 +146,7 @@ class ToDone {
     taskText = taskText.replaceAll("! ", "");
     if (task.doneDate != null) {
       taskText = taskText.replaceAll(
-          "done: ${task.doneDate.toString().substring(0, 10)}", "");
+          "done:${task.doneDate.toString().substring(0, 10)}", "");
     }
     if (task.priority.isNotEmpty) {
       taskText = taskText.replaceAll(RegExp("\\([A-Z]\\)"), "");
@@ -157,7 +157,7 @@ class ToDone {
     }
     if (task.dueDate != null) {
       taskText = taskText.replaceAll(
-          "due: ${task.dueDate.toString().substring(0, 10)}", "");
+          "due:${task.dueDate.toString().substring(0, 10)}", "");
     }
     taskText = taskText.replaceAll("\\s+", "");
     return taskText.trim();
