@@ -28,3 +28,6 @@
 - Library: Deleted all old methods.
 - Tests: Deleted all tests.
 - Documentation: Deleted old examples.
+
+## 1.0.1
+- Library: dart:io is no longer needed so the library can be used in web.

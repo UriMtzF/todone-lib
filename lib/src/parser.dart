@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'task.dart';
 
 /// A parser that can write and read [Task] objects.
@@ -25,7 +24,7 @@ class ToDone {
       if (task.creationDate != null) {
         line += 'created:${task.creationDate.toString().substring(0, 10)} ';
       }
-      fileContent += '$line${Platform.lineTerminator}';
+      fileContent += '$line\n';
     }
     return fileContent;
   }
