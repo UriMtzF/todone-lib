@@ -21,3 +21,10 @@
 
 ## 0.1.2
 - Library: Fixed the parser from reading wrong tasks with a done date, created date and a due date.
+
+## 1.0.0
+- First stable release
+- Library: Rewritten some parts of the library at it should do only the parsing and not the reading/writing operations (KISS principle).
+- Library: Deleted all old methods.
+- Tests: Deleted all tests.
+- Documentation: Deleted old examples.

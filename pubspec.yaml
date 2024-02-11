@@ -1,6 +1,6 @@
 name: todone_lib
 description: A library made to parse and write tasks in the ToDone open format.
-version: 0.1.2
+version: 1.0.0
 repository: https://github.com/UriMtzF/todone-lib
 
 environment:
