@@ -31,3 +31,9 @@
 
 ## 1.0.1
 - Library: dart:io is no longer needed so the library can be used in web.
+
+## 1.1.0
+- Library: Fixed error on parsing tags, now it's just necesary to separate tags by one space or more.
+- Library: Added methods to sort Tasks by alphabetical order, due date and priority.
+- Tests: Rewritten tests for all major cases (some edge cases might be necesary to test).
+- Documentation: Updated Task docs

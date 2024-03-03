@@ -1,1 +1,31 @@
-! This is a test task :)
+// Test for valid task
+! This is a valid task
+? This is not a valid task
+- This is not a valid task
+
+// Test for valid priority
+! (A) This task has a priority
+! This task has a valid priority (A)
+! (AB) This task does not have a valid priority
+! (a) This task does not have a valid priority
+
+// Test for status
+! This task has a done status done: 
+! This task has a done status with date done:2024-03-01
+! This task is marked as undone 
+! This task won't be marked as done because the date is wrong done:01-03-24
+
+// Test for tags
+! This task has one tag @tag1
+! This task has two tags @tag1 @tag2
+! This task has snake case tags @tag_1 @tag_2
+! This task has one badly written tag @tag 1
+
+// Test for creation date
+! This task has a valid creation date created:2024-03-01
+! This task has a wrongly written creation date (no creation date) created:01-03-24
+
+// Test for due date
+! This task has a due date due:2024-03-01
+! This task has no valid due date due:01-03-24
+! This task has no due date even if it has a due keyword due:

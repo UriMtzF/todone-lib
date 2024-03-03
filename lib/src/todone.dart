@@ -2,6 +2,50 @@ import 'task.dart';
 
 /// A parser that can write and read [Task] objects.
 class ToDone {
+  /// From a [Tasks] object return the same object with only the [Task]s sorted descendat by alphabetical order.
+  Tasks orderAlphabetical(Tasks tasks) {
+    tasks.tasksList.sort((a, b) => a.title.compareTo(b.title));
+    return tasks;
+  }
+
+  /// From a [Tasks] object return the same object with only the [Task]s sorted descendat by due date, , if no due date in a [Task] is found it will keep its position.
+  Tasks orderDue(Tasks tasks) {
+    tasks.tasksList.sort((a, b) {
+      final dueDateA = a.dueDate;
+      final dueDateB = b.dueDate;
+
+      if (dueDateA == null && dueDateB == null) {
+        return 0;
+      } else if (dueDateA == null) {
+        return 1;
+      } else if (dueDateB == null) {
+        return -1;
+      } else {
+        return dueDateA.compareTo(dueDateB);
+      }
+    });
+    return tasks;
+  }
+
+  /// From a [Tasks] object return the same object with only the [Task]s sorted descendat by priority, if no priority in a [Task] is found it will keep its position.
+  Tasks orderPriority(Tasks tasks) {
+    tasks.tasksList.sort((a, b) {
+      final priorityA = a.priority;
+      final priorityB = b.priority;
+
+      if (priorityA == null && priorityB == null) {
+        return 0;
+      } else if (priorityA == null) {
+        return 1;
+      } else if (priorityB == null) {
+        return -1;
+      } else {
+        return priorityA.compareTo(priorityB);
+      }
+    });
+    return tasks;
+  }
+
   /// From a [List] of [Task]s will generate a correctly formated [String] compatible with the ToDone format.
   String stringFromTasks(List<Task> tasks) {
     String fileContent = '';
@@ -71,13 +115,13 @@ class ToDone {
     return null;
   }
 
-  String _parsePriority(String task) {
+  String? _parsePriority(String task) {
     RegExp exp = RegExp(" \\([A-Z]\\) ");
     RegExpMatch? match = exp.firstMatch(task);
     if (match != null) {
       return match[0].toString().substring(2, 3);
     }
-    return "";
+    return null;
   }
 
   DateTime? _parseCreationDate(String task) {
@@ -91,13 +135,11 @@ class ToDone {
   }
 
   Set<String> _parseTags(String task) {
-    RegExp exp = RegExp(" @(\\w+) ");
+    RegExp exp = RegExp("@(\\w+) ");
     Iterable<RegExpMatch> matches = exp.allMatches(task);
     Set<String> tags = {};
     if (matches.isNotEmpty) {
-      for (var match in matches) {
-        tags.add(match.toString());
-      }
+      tags.addAll(matches.map((m) => m.group(1)!));
       return tags;
     }
     return {};

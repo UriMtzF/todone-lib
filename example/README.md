@@ -4,7 +4,7 @@ You can access a particular task by iterating in any way the list.
 The tasks object includes the following fields:
 - `Status status`: The status is taken from an enum that is either `done` or `undone`
 - `DateTime? doneDate`
-- `String priority`: By default an empty String
+- `String? priority`: By default an empty String
 - `DateTime? creationDate`
 - `Set<String> tags`: By default and empty Set
 - `DateTime? dueDate`
